@@ -1,0 +1,22 @@
+@import "ui-variables";
+@import "octicon-mixins";
+
+.frigg-runner-status {
+  &.pending {
+    color: @text-color-warning;
+  }
+
+  &.success {
+    color: @text-color-success;
+  }
+
+  &.fail {
+    color: @text-color-error;
+  }
+  .icon:before {
+    .icon-size(14px);
+    position: relative;
+    top: 1px;
+    margin-right: 0px;
+  }
+}

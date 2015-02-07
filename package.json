@@ -1,0 +1,19 @@
+{
+  "name": "frigg-runner-status",
+  "main": "./lib/frigg-runner-status",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "repository": "https://github.com/frigg/atom-frigg-runner-status",
+  "author": "The frigg team",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "scripts": {
+    "test": "apm test"
+  },
+  "dependencies": {
+    "atom-space-pen-views": "^2.0.3"
+  }
+
+}
