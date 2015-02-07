@@ -4,14 +4,10 @@ module.exports =
   class FriggRunnerStatusBarView extends View
 
     initialize: ->
-      if atom.workspaceView.statusBar
-        @attach()
-      else
-        atom.packages.onDidActivateAll =>
-          @attach()
-
-    attach: ->
-      atom.workspaceView.statusBar.appendLeft(this)
+      atom.packages.onDidActivateInitialPackages =>
+        statusBar = document.querySelector("status-bar")
+        if statusBar?
+          @statusBarTile = statusBar.addLeftTile(item: this, priority: 100)
 
     @content: ->
       @div class: 'inline-block', =>

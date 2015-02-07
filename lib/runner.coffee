@@ -14,19 +14,20 @@ module.exports =
 
       try
         proc = spawn('frigg', ['--failfast'], cwd: atom.project.path)
+
         proc.on 'close', (code) =>
           @running = false
           if code > 0
-            @setStatus 'fail'
+            @setStatus 'failure'
           else
             @setStatus 'success'
 
       catch err
         @running = false
-        @setStatus 'fail'
+        @setStatus 'failure'
 
     setStatus: (status) ->
-      icons = { pending: 'icon-primitive-dot', success: 'icon-check', fail: 'icon-x' }
+      icons = { pending: 'icon-primitive-dot', success: 'icon-check', failure: 'icon-x' }
       icon = @view.find('.frigg-runner-status')
       icon.removeClass('icon-primitive-dot icon-check icon-x').addClass(icons[status])
-      icon.removeClass('pending success fail').addClass(status)
+      icon.removeClass('pending success failure').addClass(status)
