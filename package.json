@@ -2,7 +2,7 @@
   "name": "frigg-runner-status",
   "main": "./lib/frigg-runner-status",
   "version": "1.0.1",
-  "description": "A short description of your package",
+  "description": "Adds the status of your frigg tasks the status bar",
   "repository": "https://github.com/frigg/atom-frigg-runner-status",
   "author": "The frigg team",
   "license": "MIT",
