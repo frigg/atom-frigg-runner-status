@@ -8,12 +8,12 @@ module.exports =
     constructor: (@view) ->
 
     run: ->
-      return if @running or !atom.project.path?
+      return if @running or !atom.project.getPaths[0]?
       @running = true
       @setStatus('pending')
 
       try
-        proc = spawn('frigg', ['--failfast'], cwd: atom.project.path)
+        proc = spawn 'frigg', ['--failfast'], cwd: atom.project.getPaths()[0]
 
         proc.on 'close', (code) =>
           @running = false
