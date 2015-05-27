@@ -8,7 +8,7 @@ module.exports =
     @runner = new Runner @friggIcon
     @disposables = new CompositeDisposable
 
-    atom.workspace.eachEditor (editor) =>
+    atom.workspace.observeTextEditors (editor) =>
       buffer = editor.getBuffer()
 
       @disposables.add buffer.onDidSave =>
